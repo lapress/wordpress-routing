@@ -1,0 +1,26 @@
+{
+    "name": "lapress/wordpress-routing",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sebastian Szczepański",
+            "email": "sebastian@ably.pl"
+        }
+    ],
+    "require": {
+        "spatie/laravel-responsecache": "^6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaPress\\WordPress\\Routing\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaPress\\WordPress\\Routing\\RoutingServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
