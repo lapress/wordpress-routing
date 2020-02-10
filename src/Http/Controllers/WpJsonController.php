@@ -3,7 +3,7 @@
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
 
-use LaPress\WordPress\Routing\Http\Controllers\Admin\BaseController;
+use LaPress\WordPress\Routing\Http\Controllers\BaseController;
 
 class WpJsonController extends BaseController
 {
