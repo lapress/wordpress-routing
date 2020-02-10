@@ -2,27 +2,12 @@
 
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
-use Parsedown;
-
 /**
  * @author    Sebastian Szczepański
  * @copyright ably
  */
 class SetupController extends BaseController
 {
-    /**
-     * @var Parsedown
-     */
-    private $parsedown;
-
-    /**
-     * @param Parsedown $parsedown
-     */
-    public function __construct(Parsedown $parsedown)
-    {
-        $this->parsedown = $parsedown;
-    }
-
     /**
      * @return \Illuminate\View\View
      */
