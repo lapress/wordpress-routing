@@ -130,7 +130,7 @@ trait BootstrapTrait
 
         // Theme
         {
-            $theme = WordPress::activetheme_path();
+            $theme = WordPress::activetheme();
             $theme_path = WordPress::themePath($theme);
 
 
