@@ -64,7 +64,7 @@ trait BootstrapTrait
 
 //        define('WP_CONTENT_URL', config('wordpress.url.site').'/wp-content');
 
-        require_once wordpress_path('wp-load.php');
+        require_once WordPress::path('wp-load.php');
 
         $this->registerContentNamespaces();
     }
@@ -84,12 +84,12 @@ trait BootstrapTrait
             // no globals
         }
 
-        require_once wordpress_path('wp-load.php');
+        require_once WordPress::path('wp-load.php');
 
         // for 'wp-admin/includes/file.php'
         global $wp_file_descriptions;
 
-        require_once wordpress_path('wp-admin/includes/admin.php');
+        require_once WordPress::path('wp-admin/includes/admin.php');
 
         // Add .blade.php description
         $file_descriptions = $wp_file_descriptions;
@@ -123,7 +123,7 @@ trait BootstrapTrait
 
             if (array_get($plugin_data, 'php_autoload_dir')) {
                 $plugin = preg_replace('/(\/.*$)|(.php$)/', '', $plugin_script);
-                $plugin_path = wordpress_path('wp-content/plugins/'.$plugin);
+                $plugin_path = WordPress::path('wp-content/plugins/'.$plugin);
                 ContentClassLoader::addNamespace($plugin_path.'/'.$plugin_data['php_autoload_dir'], $plugin_data['php_namespace']);
             }
         }

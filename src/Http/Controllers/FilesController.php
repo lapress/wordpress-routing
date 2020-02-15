@@ -4,6 +4,7 @@ namespace LaPress\WordPress\Routing\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LaPress\Support\WordPress;
+use Illuminate\Support\Str;
 
 /**
  * @author    Sebastian Szczepański
@@ -36,7 +37,7 @@ class FilesController extends BaseController
         $path = $request->path();
 
         // trim prefix
-        if (starts_with($path, $prefix)) {
+        if (Str::startsWith($path, $prefix)) {
             $path = substr($path, strlen($prefix));
         }
 

@@ -2,6 +2,7 @@
 
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
+use Illuminate\Support\Str;
 use LaPress\Support\WordPress;
 
 /**
@@ -41,7 +42,7 @@ class AdminController extends BaseController
         $prefix = config('wordpress.url.backend_prefix');
 
         // trim prefix
-        if (starts_with($path, $prefix)) {
+        if (Str::startsWith($path, $prefix)) {
             $path = substr($path, strlen($prefix));
         }
 
