@@ -4,7 +4,7 @@ namespace LaPress\WordPress\Routing;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use LaPress\Routing\Http\Middleware\AdminMiddleware;
+use LaPress\WordPress\Routing\Http\Middleware\AdminMiddleware;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
 
 /**

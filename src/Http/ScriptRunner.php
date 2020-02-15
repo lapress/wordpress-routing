@@ -45,7 +45,7 @@ class ScriptRunner
         $globals = array_merge($globals, ['wp_version', 'wp_db_version', 'tinymce_version', 'required_php_version', 'required_mysql_version']);
 
         // require current directory is '{$WORDPRESS}/wp-admin/' by 'wp-admin/menu-header.php'
-        chdir(wordpress_path('wp-admin'));
+        chdir(WordPress::path('wp-admin'));
 
         return $this->run('wp-admin/'.$filename, $globals);
     }
@@ -68,14 +68,14 @@ class ScriptRunner
             // flush out any stray output that might get out before an error occurs or
             // an exception is thrown. This prevents any partial views from leaking.
             try {
-                require wordpress_path($path);
+                require WordPress::path($path);
             } catch (Exception $e) {
                 ob_end_clean();
             }
 
             return ltrim(ob_get_clean());
         } else {
-            require wordpress_path($path);
+            require WordPress::path($path);
             $response = ob_get_contents();
             ob_end_clean();
             return $response;

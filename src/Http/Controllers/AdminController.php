@@ -2,6 +2,8 @@
 
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
+use LaPress\Support\WordPress;
+
 /**
  * @author    Sebastian Szczepański
  * @copyright ably
@@ -43,7 +45,7 @@ class AdminController extends BaseController
             $path = substr($path, strlen($prefix));
         }
 
-        $path = wordpress_path($path);
+        $path = WordPress::path($path);
 
         // ERROR: file not found
         if (!is_file($path)) {

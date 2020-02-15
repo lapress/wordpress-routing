@@ -3,6 +3,7 @@
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
 use Illuminate\Http\Request;
+use LaPress\Support\WordPress;
 
 /**
  * @author    Sebastian Szczepański
@@ -42,7 +43,7 @@ class FilesController extends BaseController
         debug_log('File Download[File Path]', $path);
 
         // make absolute file path
-        $path = wordpress_path($path);
+        $path = WordPress::path($path);
 
         // ERROR: file not found
         if (!is_file($path)) {
