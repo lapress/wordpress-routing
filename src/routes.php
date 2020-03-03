@@ -18,6 +18,8 @@ Route::get('login', 'LoginController@create');
 
 Route::redirect('admin', $adminUrl);
 Route::redirect('dashboard', $adminUrl);
+Route::any('index.php', 'AdminController@index');
+
 Route::prefix($prefix)->group(function () {
     // 2. Dashboard
     Route::get('/', ['as' => 'wordpress.admin.dashboard', 'uses' => 'DashboardController@show']);

@@ -5,6 +5,8 @@ namespace LaPress\WordPress\Routing;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use LaPress\WordPress\Routing\Http\Middleware\AdminMiddleware;
+use LaPress\WordPress\Routing\Http\Middleware\TemplateMiddleware;
+use LaPress\WordPress\Routing\Http\Middleware\XmlMiddleware;
 use Spatie\ResponseCache\Middlewares\CacheResponse;
 
 /**
@@ -33,6 +35,8 @@ class RoutingServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app['router']->aliasMiddleware('wp-admin', AdminMiddleware::class);
+        $this->app['router']->aliasMiddleware('wp-template', TemplateMiddleware::class);
+        $this->app['router']->aliasMiddleware('xml', XmlMiddleware::class);
         $this->app['router']->aliasMiddleware('cache.response', CacheResponse::class);
     }
 }

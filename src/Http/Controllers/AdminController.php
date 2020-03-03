@@ -11,6 +11,11 @@ use LaPress\Support\WordPress;
  */
 class AdminController extends BaseController
 {
+    public function index()
+    {
+        return $this->load('index');
+    }
+
     public function load($script)
     {
         return $this->script()

@@ -3,6 +3,7 @@
 namespace LaPress\WordPress\Routing\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 /**
  * @author    Sebastian Szczepański
@@ -17,7 +18,7 @@ class DashboardController extends BaseController
     public function show(Request $request)
     {
         // need trail '/'
-        if (!ends_with($request->getPathInfo(), '/')) {
+        if (!Str::endsWith($request->getPathInfo(), '/')) {
             // make valid url
             $url = $request->getSchemeAndHttpHost().$request->getBaseUrl().$request->getPathInfo().'/';
 
