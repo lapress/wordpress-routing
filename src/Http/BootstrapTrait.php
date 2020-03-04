@@ -3,6 +3,7 @@
 namespace LaPress\WordPress\Routing\Http;
 
 use LaPress\Support\WordPress;
+use Illuminate\Support\Arr;
 
 trait BootstrapTrait
 {
@@ -145,7 +146,7 @@ trait BootstrapTrait
                 'php_namespace' => 'PHP Namespace',
             ]);
 
-            if (array_get($theme_data, 'php_autoload_dir')) {
+            if (Arr::get($theme_data, 'php_autoload_dir')) {
                 ContentClassLoader::addNamespace($theme_path.'/'.array_get($theme_data, 'php_autoload_dir', 'classes'), $theme_data['php_namespace']);
             }
         }
