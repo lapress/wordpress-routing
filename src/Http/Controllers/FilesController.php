@@ -41,7 +41,7 @@ class FilesController extends BaseController
             $path = substr($path, strlen($prefix));
         }
 
-        debug_log('File Download[File Path]', $path);
+//        debug_log('File Download[File Path]', $path);
 
         // make absolute file path
         $path = WordPress::path($path);
@@ -60,7 +60,7 @@ class FilesController extends BaseController
             abort(404);
         }
 
-        debug_log('File Download[Content Type]', $this->getMimeType($path, $extension));
+//        debug_log('File Download[Content Type]', $this->getMimeType($path, $extension));
 
         $headers = [
             'Content-Type' => $this->getMimeType($path, $extension),
