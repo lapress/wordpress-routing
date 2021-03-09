@@ -19,6 +19,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
+
         $this->setVariables();
 
         $globals = $this->getGlobalsKeys();
@@ -28,6 +29,7 @@ class AdminMiddleware
         $wordpressGlobals = $this->detectNewGlobals($globals);
 
         app()->instance('wordpress.globals', $wordpressGlobals);
+//        dump($GLOBALS);die();
 
         return $next($request);
     }
