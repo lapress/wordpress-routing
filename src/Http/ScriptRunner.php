@@ -42,7 +42,7 @@ class ScriptRunner
     public function runAdmin($filename, array $globals = [])
     {
         // from wp-settings.php
-        $globals = array_merge($globals, ['wp_version', 'wp_db_version', 'tinymce_version', 'required_php_version', 'required_mysql_version']);
+        $globals = array_merge($globals, ['wp_version', 'usersearch', 'user_id', 'DISQUSVERSION', 'wp_http_referer', 'action', '_wp_admin_css_colors', 'wp_db_version', 'tinymce_version', 'required_php_version', 'required_mysql_version']);
 
         // require current directory is '{$WORDPRESS}/wp-admin/' by 'wp-admin/menu-header.php'
         chdir(WordPress::path('wp-admin'));
