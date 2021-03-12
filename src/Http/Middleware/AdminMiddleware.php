@@ -29,7 +29,6 @@ class AdminMiddleware
         $wordpressGlobals = $this->detectNewGlobals($globals);
 
         app()->instance('wordpress.globals', $wordpressGlobals);
-//        dump($GLOBALS);die();
 
         return $next($request);
     }

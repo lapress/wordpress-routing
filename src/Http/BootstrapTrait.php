@@ -72,10 +72,12 @@ trait BootstrapTrait
 
     protected function runAdminBootstrapScript()
     {
+        global $wp_filter, $wp_current_filter;
         if (env('WP_MULTISITE', false)) {
             // for 'wp-includes/ms-functions.php'
             global $current_site;
             global $current_blog;
+
 
             // for 'wp-includes/ms-settings.php'
             global $blog_id;
