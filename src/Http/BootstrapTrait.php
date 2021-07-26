@@ -115,7 +115,7 @@ trait BootstrapTrait
         foreach (WordPress::activePlugins() as $plugin_script) {
 
             if (!WordPress\Plugin::exists($plugin_script)) {
-                info("Error: Plugin '$plugin_script' was not found.");
+//                info("Error: Plugin '$plugin_script' was not found.");
                 continue;
             }
 
